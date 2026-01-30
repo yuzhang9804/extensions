@@ -1,6 +1,6 @@
 import React from "react";
 import { Action, Icon, getPreferenceValues } from "@raycast/api";
-import { TranslateResult } from "./openai-translate";
+import { TranslateResult } from "./types";
 import { Preferences } from "./types";
 
 interface ActionsOpts {
