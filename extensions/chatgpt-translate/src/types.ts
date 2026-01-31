@@ -14,6 +14,9 @@ export type TranslateResult = {
 };
 
 export type Preferences = {
+  apiKey: string;
+  apiEndpoint?: string;
+  model: string;
   lang1: LanguageCode;
   lang2: LanguageCode;
   autoInput: boolean;

@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "chatgpt-translate",
   "title": "ChatGPT Translate",
-  "description": "Free AI-powered translation using ChatGPT with natural, context-aware results - no API key required",
+  "description": "AI-powered translation using OpenAI GPT models with natural, context-aware results",
   "icon": "chatgpt-translate.png",
   "author": "yuzhang9804",
   "categories": [
@@ -15,14 +15,14 @@
       "name": "translate",
       "title": "Translate",
       "subtitle": "ChatGPT Translate",
-      "description": "Free AI-powered translation via ChatGPT",
+      "description": "AI-powered translation via OpenAI GPT",
       "mode": "view"
     },
     {
       "name": "translate-form",
       "title": "Translate Form",
       "subtitle": "ChatGPT Translate",
-      "description": "Free AI-powered translation via ChatGPT with form input",
+      "description": "AI-powered translation via OpenAI GPT with form input",
       "mode": "view"
     },
     {
@@ -55,6 +55,35 @@
     }
   ],
   "preferences": [
+    {
+      "name": "apiKey",
+      "title": "OpenAI API Key",
+      "description": "Your OpenAI API key for translation",
+      "required": true,
+      "type": "password"
+    },
+    {
+      "name": "apiEndpoint",
+      "title": "API Endpoint (Optional)",
+      "description": "Custom API endpoint for OpenAI-compatible services (e.g., Azure OpenAI). Leave empty for default OpenAI API.",
+      "required": false,
+      "type": "textfield",
+      "default": ""
+    },
+    {
+      "name": "model",
+      "title": "Model",
+      "description": "OpenAI model to use for translation",
+      "required": false,
+      "type": "dropdown",
+      "default": "gpt-4o-mini",
+      "data": [
+        { "title": "GPT-4o Mini (Recommended)", "value": "gpt-4o-mini" },
+        { "title": "GPT-4o", "value": "gpt-4o" },
+        { "title": "GPT-4 Turbo", "value": "gpt-4-turbo" },
+        { "title": "GPT-3.5 Turbo", "value": "gpt-3.5-turbo" }
+      ]
+    },
     {
       "name": "lang1",
       "title": "Primary Language",
@@ -197,13 +226,12 @@
   "dependencies": {
     "@raycast/api": "^1.87.0",
     "@raycast/utils": "^1.17.0",
-    "uuid": "^9.0.0"
+    "openai": "^4.0.0"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^1.0.11",
     "@types/node": "22.10.2",
     "@types/react": "18.3.16",
-    "@types/uuid": "^9.0.0",
     "eslint": "^8.57.0",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2"
